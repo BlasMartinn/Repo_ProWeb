@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cafe_rayo.css">
+    <title>Pedido</title>
+</head>
+<body style="text-align: center;">
+    
+
+    <div class =>
+
+        <h1>Cafeteria RAYO</h1>
+
+        <h3>Realiza tu pedido a continuacion:</h3>
+
+        <hr>
+    </div>
+
+    <br>
+    
+    <h2>Pedido de Cafe</h2>
+
+    <form style="text-align: center;">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <br><br>    
+            
+        <label for="empresa">Empresa</label>
+        <input type="text" id="empresa" name="empresa" required>
+            
+        <br><br>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" required>
+            
+        <br><br>
+
+        <label for="variedad">Variedad de café</label>
+        <select id="variedad" name="variedad">
+            <option value="expreso">Expreso</option>
+            <option value="doble">Doble</option>
+            <option value="rayo">Rayo</option>
+            <option value="mocha">Mocha</option>
+            <option value="capuccino">Capuccino</option>
+        </select>
+
+        <br><br>
+            
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="99" required>
+
+        <br><br>
+            
+        <div>
+            <input type="checkbox" id="cupon" name="cupon">
+            <label for="cupon">Tengo cupón de beneficio</label>
+        </div>
+
+        <div id="cuponDiv" style="display: none;">
+            <label for="cuponCodigo">Cupón de beneficio (5 dígitos)</label>
+            <input type="text" id="cuponCodigo" name="cuponCodigo" minlength="5" maxlength="5">
+        </div>
+
+        <br>
+            
+        <hr> 
+
+        <h2>Snacks Opcionales</h2>
+        <p><em>Ideales para acompañar un buen cafe</em></p><br>
+
+        <div>
+            <input type="checkbox" id="brownie" name="snacks" value="brownie">
+            <label for="brownie">Brownie de Chocolate: $500</label>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="checkbox" id="alfajor" name="snacks" value="alfajor">
+            <label for="alfajor">Alfajor de Dulce de Leche: $300</label>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="checkbox" id="scones" name="snacks" value="scones">
+            <label for="scones">Scones de Queso: $350</label>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="checkbox" id="coquitos" name="snacks" value="coquitos">
+            <label for="coquitos">Coquitos: $250</label>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="checkbox" id="tostado" name="snacks" value="tostado">
+            <label for="tostado">Tostado <strong>JyQ</strong>: $700</label>
+        </div>
+
+        <br>
+            
+        <button type="submit"><a href="realizado4.html" target="_blank" rel="noopener noreferrer" title="Confirmando pedido">PEDIR</a></button>
+    </form>
+
+    <script>
+        function mostrarCupon() {
+            var cuponDiv = document.getElementById("cuponDiv");
+            var cuponCheckbox = document.getElementById("cupon");
+            if (cuponCheckbox.checked) {
+                cuponDiv.style.display = "block";
+            } else {
+                cuponDiv.style.display = "none";
+            }
+        }
+
+        var cuponCheckbox = document.getElementById("cupon");
+        cuponCheckbox.addEventListener("change", mostrarCupon);
+    </script>
+</body>
+</html>
